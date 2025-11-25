@@ -328,7 +328,7 @@ def run_client():
             # 3) SEND OUTCOME TO SERVER
             send_epair(sock, client_id, Eplus, Eminus)
 
-            finish = check_finish()
+            #finish = check_finish()
 
     except Exception as e:
         print("Error:", e)

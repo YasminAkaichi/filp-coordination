@@ -120,9 +120,9 @@ def get_epsilon_pairs(client):
         response = client.recv(1024)
         response = response.decode("utf-8")        
         lepairs.append(response)
-    # msg = "reset"
-    # client.send(msg.encode("utf-8")[:1024])
-    # client.recv(1024)
+    msg = "reset"
+    client.send(msg.encode("utf-8")[:1024])
+    client.recv(1024)
     return lepairs
 
 
@@ -232,7 +232,7 @@ def run_server():
 
             raw_rules = rules_arr[0].tolist()
 
-            # 2) 🔥 Convertir en syntaxe BLPy pour le STORE
+            # 2) Convertir en syntaxe BLPy pour le STORE
             rules_str = [normalize_rule_for_store(r) for r in raw_rules]
             print("Generated hypothesis (Store format):", rules_str)
 
